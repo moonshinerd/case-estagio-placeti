@@ -23,6 +23,18 @@ Este projeto é um webservice desenvolvido em Java com Spring que realiza as ope
 - **Contrato**: Relacionamento com contrato.
 ## Como Executar
 
+### Requisitos
+
+1. **Java Development Kit (JDK):** Versão 17 ou superior.
+   
+2. **Spring Boot:** Utilize a versão 3.3.0 ou superior.
+
+3. **Maven:** Utilize uma versão compatível e estável do Maven.
+
+4. **Postman ou Insomnia:** Utilize a versão mais recente disponível dessas ferramentas para testar as requisições HTTP aos endpoints da aplicação.
+
+Sempre verifique a documentação oficial das ferramentas e tecnologias utilizadas para garantir a compatibilidade e obter informações sobre as versões mais recentes disponíveis.
+
 1. **Clone o Repositório:**
 
    ```bash
