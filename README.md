@@ -37,12 +37,12 @@ Este projeto é um webservice desenvolvido em Java com Spring que realiza as ope
 
 3. **Execute o Maven:**
 
-Para compilar e executar a aplicação utilizando o Maven, execute o seguinte comando:
+   Para compilar e executar a aplicação utilizando o Maven, execute o seguinte comando:
 
-```
-mvn install
-mvn spring-boot:run
-```
+   ```
+   mvn install
+   mvn spring-boot:run
+   ```
 Isso iniciará a aplicação Spring Boot. Certifique-se de ter o JDK instalado e configurado corretamente em seu sistema.
 
 
@@ -70,7 +70,9 @@ Isso iniciará a aplicação Spring Boot. Certifique-se de ter o JDK instalado e
            "num_reg_eletronico": "123456"
        }
        ```
+
      - Você também pode criar contratos junto de veículos:
+     
        ```json
        {
            "nome_devedor": "Nome do Devedor",
@@ -111,7 +113,9 @@ Isso iniciará a aplicação Spring Boot. Certifique-se de ter o JDK instalado e
            "chassi": "XYZ789"
        }
        ```
+
      - Você também pode criar veiculos vinculados a um contrato:
+
      ```json
      {
            "gravame": "12345",
@@ -138,3 +142,23 @@ Isso iniciará a aplicação Spring Boot. Certifique-se de ter o JDK instalado e
    - **POST /veiculo/{id}/associar-contrato/{contratoId}**: Associa um contrato ao veículo com o ID especificado. Substitua `{id}` pelo ID do veículo e `{contratoId}` pelo ID do contrato que deseja associar.
 
    Certifique-se de passar os IDs corretos no corpo da requisição ou como parâmetros na URL.
+
+## Ferramentas e Conceitos
+
+### Maven
+
+Maven é uma ferramenta de automação de compilação utilizada primariamente para projetos em Java. Ele ajuda na gestão de dependências do projeto, compilação, empacotamento e distribuição de artefatos.
+
+### Docker
+
+Docker é uma plataforma que permite que você desenvolva, envie e execute aplicativos em contêineres. Contêineres permitem empacotar um aplicativo com todas as partes necessárias, como bibliotecas e outras dependências, e enviá-lo como uma única imagem.
+
+### Spring
+
+Spring é um framework Java que simplifica o desenvolvimento de aplicativos corporativos. Ele fornece uma infraestrutura abrangente para desenvolver aplicativos Java de forma rápida e fácil, especialmente aplicativos baseados em microservices. Alguns conceitos importantes do Spring incluem:
+
+- **Inversão de Controle (IoC)**: O controle do fluxo de execução é invertido pelo framework, que gerencia a criação e injeção de dependências.
+- **Injeção de Dependência (DI)**: É um padrão de design no qual as dependências de um objeto são injetadas em vez de serem criadas dentro do objeto.
+- **Spring Boot**: Uma extensão do Spring que facilita a configuração e o desenvolvimento de aplicativos Spring, fornecendo configurações padrão e eliminando a necessidade de configuração manual.
+- **Spring Data**: Uma subprojetos do Spring que facilita o acesso a dados de bancos de dados relacionais e NoSQL por meio de abstrações simplificadas.
+- **Spring MVC**: Um framework de model-view-controller para criar aplicativos web baseados em padrões.
