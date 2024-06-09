@@ -6,6 +6,8 @@ import com.placeti.demo.repository.VeiculoRepository;
 import com.placeti.demo.repository.ContratoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -17,6 +19,8 @@ public class VeiculoService {
 
     @Autowired
     private ContratoRepository contratoRepository;
+
+    private static final Logger logger = LoggerFactory.getLogger(VeiculoService.class);
 
     public List<Veiculo> listarTodos() {
         return (List<Veiculo>) veiculoRepository.findAll();
@@ -62,6 +66,18 @@ public class VeiculoService {
     }
 
     public void deleteVeiculo(Long id) {
-        veiculoRepository.deleteById(id);
+        logger.info("Tentando deletar veículo com ID: {}", id);
+        Veiculo veiculo = veiculoRepository.findById(id).orElse(null);
+        if (veiculo != null) {
+            Contrato contrato = veiculo.getContrato();
+            if (contrato != null) {
+                contrato.getVeiculos().remove(veiculo);
+                contratoRepository.save(contrato);
+            }
+            veiculoRepository.deleteById(id);
+            logger.info("Veículo com ID: {} deletado com sucesso", id);
+        } else {
+            logger.warn("Veículo com ID: {} não encontrado", id);
+        }
     }
 }

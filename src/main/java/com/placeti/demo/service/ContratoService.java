@@ -15,7 +15,7 @@ public class ContratoService {
     private ContratoRepository contratoRepository;
 
     public List<Contrato> listarTodos() {
-        return (List<Contrato>)contratoRepository.findAll();
+        return (List<Contrato>) contratoRepository.findAll();
     }
 
     public Contrato salvarContrato(Contrato contrato) {
@@ -56,7 +56,6 @@ public class ContratoService {
             return contratoRepository.save(contrato);
         }
     }
-
 
     public Contrato buscaPorId(Long id) {
         return contratoRepository.findById(id).orElse(null);
