@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.placeti</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>placeticase</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CasePlaceTI</name>
 	<description>Case desenvolvido no case da PLACE TI</description>

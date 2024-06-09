@@ -35,7 +35,7 @@ public class ContratoController {
     }
 
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteContrato(@PathVariable Long id) {
         contratoService.deleteContrato(id);
     }
