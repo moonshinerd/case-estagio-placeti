@@ -34,6 +34,11 @@ public class VeiculoController {
         return veiculoService.atualizarVeiculo(id, veiculo);
     }
 
+    @PostMapping("/{id}/associar-contrato/{contratoId}")
+    public Veiculo associarContrato(@PathVariable Long id, @PathVariable Long contratoId) {
+        return veiculoService.associarContrato(id, contratoId);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void deleteVeiculo(@PathVariable Long id) {
         veiculoService.deleteVeiculo(id);

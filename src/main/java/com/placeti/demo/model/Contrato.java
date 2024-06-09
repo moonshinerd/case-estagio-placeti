@@ -1,12 +1,14 @@
 package com.placeti.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Table(name= "Contrato")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Contrato {
 
     @Id
@@ -20,7 +22,6 @@ public class Contrato {
     private String num_reg_eletronico;
 
     @OneToMany(mappedBy = "contrato", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonManagedReference
     private List<Veiculo> veiculos;
 
     // Getters e Setters

@@ -34,6 +34,10 @@ public class ContratoController {
         return contratoService.atualizarContrato(id, contrato);
     }
 
+    @PostMapping("/{id}/adicionar-veiculo/{veiculoId}")
+    public Contrato adicionarVeiculo(@PathVariable Long id, @PathVariable Long veiculoId) {
+        return contratoService.adicionarVeiculo(id, veiculoId);
+    }
 
     @DeleteMapping("/delete/{id}")
     public void deleteContrato(@PathVariable Long id) {

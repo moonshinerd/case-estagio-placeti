@@ -37,7 +37,6 @@ public class VeiculoService {
     public Veiculo atualizarVeiculo(Long id, Veiculo veiculo) {
         Veiculo veiculoExistente = veiculoRepository.findById(id).orElse(null);
         if (veiculoExistente != null) {
-            // Atualizar apenas os campos fornecidos na requisição
             if (veiculo.getGravame() != null) {
                 veiculoExistente.setGravame(veiculo.getGravame());
             }
@@ -54,7 +53,6 @@ public class VeiculoService {
                 Contrato contrato = contratoRepository.findById(veiculo.getContrato().getId()).orElse(null);
                 veiculoExistente.setContrato(contrato);
             }
-
             return veiculoRepository.save(veiculoExistente);
         } else {
             return veiculoRepository.save(veiculo);
@@ -79,5 +77,19 @@ public class VeiculoService {
         } else {
             logger.warn("Veículo com ID: {} não encontrado", id);
         }
+    }
+
+    public Veiculo associarContrato(Long veiculoId, Long contratoId) {
+        Veiculo veiculo = veiculoRepository.findById(veiculoId).orElse(null);
+        Contrato contrato = contratoRepository.findById(contratoId).orElse(null);
+
+        if (veiculo != null && contrato != null) {
+            veiculo.setContrato(contrato);
+            contrato.getVeiculos().add(veiculo);
+            veiculoRepository.save(veiculo);
+            contratoRepository.save(contrato);
+            return veiculo;
+        }
+        return null;
     }
 }

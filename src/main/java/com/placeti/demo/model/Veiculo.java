@@ -1,10 +1,12 @@
 package com.placeti.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Veiculo")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Veiculo {
 
     @Id
@@ -18,7 +20,6 @@ public class Veiculo {
 
     @ManyToOne
     @JoinColumn(name = "contrato_id")
-    @JsonBackReference
     private Contrato contrato;
 
     // Getters e Setters
