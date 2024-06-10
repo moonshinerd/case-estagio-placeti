@@ -55,10 +55,11 @@ Sempre verifique a documentação oficial das ferramentas e tecnologias utilizad
    mvn install
    mvn spring-boot:run
    ```
-Isso iniciará a aplicação Spring Boot. Certifique-se de ter o JDK instalado e configurado corretamente em seu sistema.
+   Isso iniciará a aplicação Spring Boot. Certifique-se de ter o JDK instalado e configurado corretamente em seu sistema.
+   Caso você não consiga executar o projeto maven através do teminal, utilize a IDE de sua prefêrencia para executar o projeto maven.
 
 
-4. **Acesse o Postman ou Insomnia e Faça as Requisições:**
+5. **Acesse o Postman ou Insomnia e Faça as Requisições:**
 
    Você pode usar o seguinte conjunto de endpoints para testar as operações CRUD:
 
@@ -145,7 +146,7 @@ Isso iniciará a aplicação Spring Boot. Certifique-se de ter o JDK instalado e
    - **PUT /veiculo/{id}**: Atualiza um veículo existente pelo ID.
    - **DELETE /veiculo/{id}**: Deleta um veículo existente pelo ID.
 
-5. **Teste as Associações entre Contrato e Veículo:**
+6. **Teste as Associações entre Contrato e Veículo:**
 
    Para associar um veículo a um contrato existente ou associar um contrato a um veículo existente, use os seguintes endpoints:
 
